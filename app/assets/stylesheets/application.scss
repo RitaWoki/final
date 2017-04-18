@@ -1,0 +1,90 @@
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+// Web Fonts
+
+// End Web Fonts
+
+// Media Queries
+@media (min-width: 769px) {
+
+  .wrap {
+    min-height: calc(100vh - 90px);
+  }
+
+  .wrapper {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+}
+
+// End Media Queries
+
+
+
+// Landing Page
+
+* {
+  box-sizing: border-box;
+}
+
+head {
+  background-color: #ffa949;
+}
+
+header {
+  font-family: 'Andada', serif;
+  padding-top: 50px;
+  height: 650px;
+
+background:  url('food.jpg') no-repeat center;
+
+background-attachment:fixed;
+  background-size: cover;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0,0,0,.8);
+}
+
+body {
+  color: #878787;
+  margin: 0;
+  font-family: 'Andada', serif;
+}
+
+.title {
+  color: white;
+  font-size: 1.625em;
+  text-align: center;
+}
+
+.wrapper {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.main-footer {
+  text-align: center;
+  margin: 5% auto;
+}
+
+.nav {
+  margin-top: 0;
+  width: 100%;
+  display: block;
+}
+
+.title {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+
+// End Landing Page
+//
+label.newbiz {
+  color: blue;
+  display: inline;
+  padding-top: 15px;
+}

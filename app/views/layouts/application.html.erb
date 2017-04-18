@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Compost</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Andada" rel="stylesheet">
+  </head>
+  <body class="body text-left">
+    <div>
+      <ul class="nav navbar-nav navbar-right">
+        <% if current_user %>
+        <li><%= link_to 'Edit Profile', edit_user_registration_path %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to 'About', {}, :name => 'about' %></li>
+        <% else %>
+        <li><%= link_to 'See businesses', user_businesses_path(:user_id) %></li>
+
+        <li><%= link_to 'Login', new_user_session_path %></li>
+        <li><%= link_to 'About', :name => 'static_home/about.html.erb' %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="wrap">
+      <header>
+        <!-- a href=<%= root_path %>>
+          <img class="title text-center" src="http://iloveedenvale.net/wp-content/uploads/2015/06/recycling-logo-small.gif" alt="logo" /> 
+        </a>   -->
+      </header>
+      <div class="wrapper">
+        <%= flash[:notice] %>
+        <%= yield %>
+      </div>
+    </div>
+    <!-- <footer class="main-footer">
+      <span>&copy;2017 Rita Woki</span>
+    </footer> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['apiKey']%>&callback=initMap"></script>
+  </body>
+</html>

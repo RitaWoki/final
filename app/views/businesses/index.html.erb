@@ -1,0 +1,11 @@
+<h1>Businesses</h1>
+
+<ul>
+  <% @businesses.each do |business| %>
+    <li><%= link_to business.biz_name, business_path(business) %></li>
+    <% end %>
+</ul>
+
+<hr>
+
+<%= link_to "Add a new business", new_business_path, id: "new_business_link", class: "btn btn-primary", remote: true %>

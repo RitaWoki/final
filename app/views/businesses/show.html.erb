@@ -1,0 +1,41 @@
+<h1><%= @business.biz_name %></h1>
+
+
+<h3><%= @business.biz_type %></h3>
+<h3><%= @business.biz_address %></h3>
+<h3><%= @business.biz_phone %></h3>
+<h3><%= @business.biz_contact %></h3>
+<h3><%= @business.biz_number %></h3>
+
+<%= link_to "Make request", new_business_request_path(@business), id: "new_request_link", remote: true %>
+
+<% if @business.requests.any? %>
+  <h4>Requests made:</h4>
+
+  <ul>
+    <% @business.requests.each do |request| %>
+      <li>
+        <%= request.interval %>
+        <%= link_to "Edit", edit_business_request_path(@business, request), id: "edit_request_link", remote: true %> |
+        <%= link_to "Delete", business_request_path(@business, request), :data => {:confirm => "You sure?", :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+    There are no requests
+  </p>
+<% end %>
+
+<hr>
+
+<p>
+  <%= link_to "Edit", edit_business_path(@business), id: "edit_business_link", remote: true %>
+</p>
+<p>
+  <%= link_to "Delete", business_path(@business), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+</p>
+
+<p>
+  <%= link_to "Return to businesses", businesses_path %>
+</p>
